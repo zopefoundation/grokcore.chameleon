@@ -4,7 +4,8 @@ CHANGES
 1.0.4 (unreleased)
 ==================
 
-- ...
+- Improve the performances of the translate mechanism with Chameleon
+  2.10 or more recent.
 
 1.0.3 (2012-10-12)
 ==================

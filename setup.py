@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 version = '1.0.4dev'
 
 install_requires = [
-    'Chameleon >= 2.9',
+    'Chameleon >= 2.10',
     'grokcore.component',
     'grokcore.view',
     'setuptools',
@@ -21,8 +21,7 @@ tests_require = [
 long_description = (
     open('README.txt').read() +
     '\n\n' +
-    open(os.path.join('src', 'grokcore', 'chameleon',
-    'README.txt')).read() +
+    open(os.path.join('src', 'grokcore', 'chameleon', 'README.txt')).read() +
     '\n\n' +
     open('CHANGES.txt').read())
 

@@ -21,6 +21,7 @@ from grokcore.component import GlobalUtility, implements, name
 from grokcore.view import interfaces
 from grokcore.view.components import GrokTemplate
 import zope.i18n
+import chameleon.i18n
 from chameleon.zpt.template import PageTemplate, PageTemplateFile
 from chameleon.tales import PythonExpr
 from chameleon.tales import StringExpr
@@ -52,16 +53,22 @@ class PageTemplate(PageTemplate):
         # zope.i18n.translate will call negociate to retrieve the
         # target_language if it is None.
         request = vars.get('request')
+        if 'target_language' not in vars:
+            vars['target_language'] = zope.i18n.negotiate(request)
 
-        def translate(
-            msgid, domain=None, mapping=None, context=None,
-            target_language=None, default=None):
-            # We swap context with the request, that is required for
-            # zope.i18ntranslate.
-            return zope.i18n.translate(
-                msgid, domain, mapping, request, target_language, default)
+        if vars.get('target_language') is not None:
 
-        vars['translate'] = translate
+            def translate(
+                    msgid, domain=None, mapping=None, context=None,
+                    target_language=None, default=None):
+                # We swap context with the request, that is required for
+                # zope.i18ntranslate.
+                return zope.i18n.translate(
+                    msgid, domain, mapping, request, target_language, default)
+
+            vars['translate'] = translate
+        else:
+            vars['translate'] = chameleon.i18n.simple_translate
 
         return super(PageTemplate, self).render(**vars)
 
@@ -73,8 +80,7 @@ def _module_relative_to_abs(ctx, filename):
     for depth in (2, 3):
         frame = sys._getframe(depth)
         package_name = frame.f_globals.get('__name__', None)
-        if package_name is not None and \
-               package_name != ctx:
+        if package_name is not None and package_name != ctx:
             module = sys.modules[package_name]
             try:
                 path = module.__path__[0]
