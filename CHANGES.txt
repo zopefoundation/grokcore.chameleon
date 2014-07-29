@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-1.0.4 (unreleased)
+1.0.4 (2014-07-29)
 ==================
 
 - Improve the performances of the translate mechanism with Chameleon
