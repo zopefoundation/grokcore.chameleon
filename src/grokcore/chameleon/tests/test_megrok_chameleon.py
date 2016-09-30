@@ -1,5 +1,6 @@
 """Test setup for grokcore.chameleon.
 """
+import re
 import doctest
 import unittest
 import zope.interface
@@ -10,12 +11,14 @@ from zope.traversing.interfaces import ITraversable
 from zope.traversing.browser.interfaces import IAbsoluteURL
 from zope.publisher.interfaces.browser import IBrowserRequest
 from grokcore.chameleon.tests import FunctionalLayer
+from zope.testing import renormalizing
 
 FLAGS = (doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE)
 
+
+@zope.interface.implementer(ITraversable, IAbsoluteURL)
 class DummyResource(object):
     """ Dummy resource implementation. """
-    zope.interface.implements(ITraversable, IAbsoluteURL)
 
     def __init__(self, request, name=''):
         self.request = request
@@ -39,12 +42,20 @@ def setUpStatic(test):
     return
 
 
+checker = renormalizing.RENormalizing([
+    (re.compile(
+        r"IOError: \[Errno 2\] No such file or directory: "),
+        r'FileNotFoundError: \[Errno 2\] No such file or directory: ')
+    ])
+
+
 def test_suite():
     """Get a testsuite of all doctests.
     """
     suite = unittest.TestSuite()
     readme = doctest.DocFileSuite(
         'README.txt',
+        checker=checker,
         setUp=setUpStatic,
         package=grokcore.chameleon,
         globs=dict(
@@ -57,6 +68,7 @@ def test_suite():
     suite.addTest(
         doctest.DocTestSuite(
             'grokcore.chameleon.tests.templatefile',
+            checker=checker,
             setUp=setUpStatic,
             optionflags=FLAGS,
             )

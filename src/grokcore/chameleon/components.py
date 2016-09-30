@@ -17,7 +17,7 @@ import os
 import sys
 import martian
 
-from grokcore.component import GlobalUtility, implements, name
+from grokcore.component import GlobalUtility, implementer, name
 from grokcore.view import interfaces
 from grokcore.view.components import GrokTemplate
 import zope.i18n
@@ -150,8 +150,8 @@ class ChameleonPageTemplateFile(ChameleonPageTemplate):
         self.setFromFilename(filename, _prefix)
 
 
+@implementer(interfaces.ITemplateFileFactory)
 class ChameleonPageTemplateFactory(GlobalUtility):
-    implements(interfaces.ITemplateFileFactory)
     name('cpt')
 
     def __call__(self, filename, _prefix=None):

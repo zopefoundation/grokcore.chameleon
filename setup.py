@@ -14,8 +14,9 @@ install_requires = [
 
 tests_require = [
     'grokcore.viewlet',
-    'zope.app.wsgi',
     'zope.app.appsetup',
+    'zope.app.wsgi',
+    'zope.testbrowser',
     ]
 
 long_description = (
