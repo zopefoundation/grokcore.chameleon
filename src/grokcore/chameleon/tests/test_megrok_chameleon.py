@@ -45,7 +45,7 @@ def setUpStatic(test):
 checker = renormalizing.RENormalizing([
     (re.compile(
         r"IOError: \[Errno 2\] No such file or directory: "),
-        r'FileNotFoundError: \[Errno 2\] No such file or directory: ')
+        r'FileNotFoundError: [Errno 2] No such file or directory: ')
     ])
 
 
