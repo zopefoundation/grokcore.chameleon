@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 
 version = '1.0.5.dev0'
 
+
 install_requires = [
     'Chameleon >= 2.10',
     'grokcore.component',
@@ -12,12 +13,14 @@ install_requires = [
     'zope.i18n',
     ]
 
+
 tests_require = [
     'grokcore.viewlet',
     'zope.app.appsetup',
     'zope.app.wsgi',
     'zope.testbrowser',
     ]
+
 
 long_description = (
     open('README.txt').read() +
@@ -26,20 +29,27 @@ long_description = (
     '\n\n' +
     open('CHANGES.txt').read())
 
+
 setup(
     name='grokcore.chameleon',
     version=version,
     description="Chameleon page template support for Grok",
     long_description=long_description,
-    # Get strings from http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
-        'Programming Language :: Python :: 2.5',
-        'Operating System :: OS Independent',
-        'Topic :: Internet :: WWW/HTTP',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: Implementation',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
+        'Framework :: Zope3',
         ],
     keywords="grok chameleon template",
     author="Uli Fouquet",
