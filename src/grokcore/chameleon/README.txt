@@ -72,7 +72,7 @@ Simple templates
 We prepared a plain cavepainting view. The template looks like this:
 
     >>> cavepainting_cpt = os.path.join(template_dir, 'cavepainting.cpt')
-    >>> print open(cavepainting_cpt, 'rb').read()
+    >>> print(open(cavepainting_cpt, 'r').read())
     <html>
       <body>
         A cave painting.
@@ -83,7 +83,7 @@ The rendered view looks like this:
 
     >>> view = getMultiAdapter((manfred, request),
     ...                         name='cavepainting')
-    >>> print view()
+    >>> print(view())
     <html>
       <body>
         A cave painting.
@@ -98,7 +98,7 @@ and its methods and attributes. The ``food`` view does exactly
 this. The template looks like this:
 
     >>> food_cpt = os.path.join(template_dir, 'food.cpt')
-    >>> print open(food_cpt, 'rb').read()
+    >>> print(open(food_cpt, 'r').read())
     <html>
     <body>
     <span tal:define="foo 'a FOO'">
@@ -115,7 +115,7 @@ this. The template looks like this:
 The rendered view looks like this:
 
     >>> view = getMultiAdapter((manfred, request), name='food')
-    >>> print view()
+    >>> print(view())
     <html>
     <body>
     <span>
@@ -172,7 +172,7 @@ Each template provides at least the following vars:
 as we can see, when we look at the ``vars.cpt`` from our fixture:
 
     >>> cpt_file = os.path.join(template_dir, 'vars.cpt')
-    >>> print open(cpt_file, 'rb').read()
+    >>> print(open(cpt_file, 'r').read())
     <html>
     <body>
     This template knows about the following vars:
@@ -194,7 +194,7 @@ as we can see, when we look at the ``vars.cpt`` from our fixture:
 and render it:
 
     >>> view = getMultiAdapter((manfred, request), name='vars')
-    >>> print view()
+    >>> print(view())
     <html>
     <body>
     This template knows about the following vars:
@@ -219,7 +219,7 @@ and render it:
 Custom template namespace names are supported:
 
     >>> view = getMultiAdapter((manfred, request), name='namespace')
-    >>> print view()
+    >>> print(view())
     <html>
     <body>
     This template knows about the following custom namespace name:
@@ -249,7 +249,7 @@ inline template like this::
 If we render this view we get:
 
     >>> view = getMultiAdapter((manfred, request), name='inline')
-    >>> print view()
+    >>> print(view())
     <html><body>ME GROK HAS INLINES! Some Text</body></html>
 
 TAL expressions
@@ -311,7 +311,7 @@ Now we can make use of the TALES expressions ``not:``, ``path:``,
 our fixture:
 
     >>> cpt_file = os.path.join(template_dir, 'expressions.cpt')
-    >>> print open(cpt_file, 'rb').read()
+    >>> print(open(cpt_file, 'r').read())
     <html>
     <body>
       <div tal:define="food 'Yummy Dinoburger'"
@@ -340,7 +340,7 @@ our fixture:
 and render it:
 
     >>> view = getMultiAdapter((manfred, request), name='expressions')
-    >>> print view()
+    >>> print(view())
     <html>
     <body>
     <BLANKLINE>
@@ -371,7 +371,7 @@ Translation
     >>> # Monkeypatch zope.i18n.negotiate
     >>> import zope.i18n
     >>> import zope.i18n.config
-    >>> print getMultiAdapter((manfred, request), name='menu')()
+    >>> print(getMultiAdapter((manfred, request), name='menu')())
     <html>
     <body>
       <h1>Menu</h1>
@@ -386,7 +386,7 @@ Translation
     >>> old_1, old_2 = zope.i18n.negotiate, zope.i18n.config.ALLOWED_LANGUAGES
     >>> zope.i18n.negotiate = lambda context: 'de'
     >>> zope.i18n.config.ALLOWED_LANGUAGES = ['de']
-    >>> print getMultiAdapter((manfred, request), name='menu')()
+    >>> print(getMultiAdapter((manfred, request), name='menu')())
     <html>
     <body>
       <h1>Menu</h1>
@@ -408,7 +408,7 @@ different from regular Zope page templates.
 We can define macros like this:
 
     >>> cpt_file = os.path.join(template_dir, 'macromaster.cpt')
-    >>> print open(cpt_file, 'rb').read()
+    >>> print(open(cpt_file, 'r').read())
     <p xmlns:metal="http://xml.zope.org/namespaces/metal"
        metal:define-macro="hello">
       Hello from <b metal:define-slot="name">macro master</b>
@@ -444,7 +444,7 @@ regular Zope page templates.
 The following template makes use of both methods:
 
     >>> cpt_file = os.path.join(template_dir, 'macrouser.cpt')
-    >>> print open(cpt_file, 'rb').read()
+    >>> print(open(cpt_file, 'r').read())
     <html xmlns:metal="http://xml.zope.org/namespaces/metal">
     <body>
       <p metal:define-macro="hello">
@@ -466,7 +466,7 @@ user content:
 
     >>> cpt_file = os.path.join(template_dir, 'macrouser.cpt')
     >>> view = getMultiAdapter((manfred, request), name='macrouser')
-    >>> print view()
+    >>> print(view())
     <html>
     <body>
       <p>

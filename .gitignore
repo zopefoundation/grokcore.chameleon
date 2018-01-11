@@ -1,6 +1,8 @@
-*.pyc
-*.egg-info
+.coverage
 .installed.cfg
+.tox
+*.egg-info
+*.pyc
 bin
-parts
 develop-eggs
+parts

@@ -4,8 +4,7 @@ CHANGES
 1.0.5 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Python 3 compatibility.
 
 1.0.4 (2014-07-29)
 ==================

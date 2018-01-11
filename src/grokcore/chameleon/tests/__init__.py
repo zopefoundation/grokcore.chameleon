@@ -15,6 +15,14 @@
 """A functional test layer.
 """
 import grokcore.chameleon
-from zope.app.wsgi.testlayer import BrowserLayer
+import zope.testbrowser.wsgi
+import zope.app.wsgi.testlayer
 
-FunctionalLayer = BrowserLayer(grokcore.chameleon, 'ftesting.zcml')
+
+class Layer(
+        zope.testbrowser.wsgi.TestBrowserLayer,
+        zope.app.wsgi.testlayer.BrowserLayer):
+    pass
+
+
+FunctionalLayer = Layer(grokcore.chameleon)
