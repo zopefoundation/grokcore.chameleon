@@ -1,9 +1,13 @@
+*.pyc
 .coverage
 .installed.cfg
-.tox
-*.egg-info
-*.pyc
+.tox/
+__pycache__
 bin
 develop-eggs
-parts
 htmlcov/
+lib/
+parts
+pip-selfcheck.json
+pyvenv.cfg
+src/*.egg-info
