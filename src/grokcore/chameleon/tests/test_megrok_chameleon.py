@@ -31,6 +31,7 @@ class DummyResource(object):
     def __str__(self):
         return 'dummy:%s' % self.name
 
+
 def setUpStatic(test):
     # Register a dummy resource for static folder.
     zope.component.provideAdapter(
@@ -38,15 +39,14 @@ def setUpStatic(test):
         adapts=(IBrowserRequest,),
         provides=zope.interface.Interface,
         name='grokcore.chameleon.tests.cpt_fixture'
-        )
-    return
+    )
 
 
 checker = renormalizing.RENormalizing([
     (re.compile(
         r"IOError: \[Errno 2\] No such file or directory: "),
         r'FileNotFoundError: [Errno 2] No such file or directory: ')
-    ])
+])
 
 
 def test_suite():
@@ -60,9 +60,9 @@ def test_suite():
         package=grokcore.chameleon,
         globs=dict(
             getRootFolder=FunctionalLayer.getRootFolder,
-            ),
+        ),
         optionflags=FLAGS,
-        )
+    )
     readme.layer = FunctionalLayer
     suite.addTest(readme)
     suite.addTest(
@@ -71,6 +71,6 @@ def test_suite():
             checker=checker,
             setUp=setUpStatic,
             optionflags=FLAGS,
-            )
         )
+    )
     return suite
