@@ -72,7 +72,8 @@ Simple templates
 We prepared a plain cavepainting view. The template looks like this:
 
     >>> cavepainting_cpt = os.path.join(template_dir, 'cavepainting.cpt')
-    >>> print(open(cavepainting_cpt, 'r').read())
+    >>> with open(cavepainting_cpt, 'r') as f:
+    ...     print(f.read())
     <html>
       <body>
         A cave painting.
@@ -98,7 +99,8 @@ and its methods and attributes. The ``food`` view does exactly
 this. The template looks like this:
 
     >>> food_cpt = os.path.join(template_dir, 'food.cpt')
-    >>> print(open(food_cpt, 'r').read())
+    >>> with open(food_cpt, 'r') as f:
+    ...     print(f.read())
     <html>
     <body>
     <span tal:define="foo 'a FOO'">
@@ -172,7 +174,8 @@ Each template provides at least the following vars:
 as we can see, when we look at the ``vars.cpt`` from our fixture:
 
     >>> cpt_file = os.path.join(template_dir, 'vars.cpt')
-    >>> print(open(cpt_file, 'r').read())
+    >>> with open(cpt_file, 'r') as f:
+    ...     print(f.read())
     <html>
     <body>
     This template knows about the following vars:
@@ -311,7 +314,8 @@ Now we can make use of the TALES expressions ``not:``, ``path:``,
 our fixture:
 
     >>> cpt_file = os.path.join(template_dir, 'expressions.cpt')
-    >>> print(open(cpt_file, 'r').read())
+    >>> with open(cpt_file, 'r') as f:
+    ...     print(f.read())
     <html>
     <body>
       <div tal:define="food 'Yummy Dinoburger'"
@@ -408,7 +412,8 @@ different from regular Zope page templates.
 We can define macros like this:
 
     >>> cpt_file = os.path.join(template_dir, 'macromaster.cpt')
-    >>> print(open(cpt_file, 'r').read())
+    >>> with open(cpt_file, 'r') as f:
+    ...     print(f.read())
     <p xmlns:metal="http://xml.zope.org/namespaces/metal"
        metal:define-macro="hello">
       Hello from <b metal:define-slot="name">macro master</b>
@@ -444,7 +449,8 @@ regular Zope page templates.
 The following template makes use of both methods:
 
     >>> cpt_file = os.path.join(template_dir, 'macrouser.cpt')
-    >>> print(open(cpt_file, 'r').read())
+    >>> with open(cpt_file, 'r') as f:
+    ...     print(f.read())
     <html xmlns:metal="http://xml.zope.org/namespaces/metal">
     <body>
       <p metal:define-macro="hello">
