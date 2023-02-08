@@ -24,10 +24,10 @@
 
 """  # noqa: E501 line too long
 import zope.interface
-import grokcore.component.interfaces
-import grokcore.component
-import grokcore.view
 
+import grokcore.component
+import grokcore.component.interfaces
+import grokcore.view
 from grokcore.chameleon.components import ChameleonPageTemplateFile
 from grokcore.chameleon.components import PageTemplateFile
 

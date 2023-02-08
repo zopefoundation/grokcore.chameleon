@@ -14,9 +14,10 @@
 # $Id$ $Rev$ $Author$ $Date$
 """A functional test layer.
 """
-import grokcore.chameleon
-import zope.testbrowser.wsgi
 import zope.app.wsgi.testlayer
+import zope.testbrowser.wsgi
+
+import grokcore.chameleon
 
 
 class Layer(

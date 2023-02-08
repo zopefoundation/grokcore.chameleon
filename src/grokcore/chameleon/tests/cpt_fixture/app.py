@@ -1,10 +1,10 @@
-from grokcore.component.interfaces import IContext
 from zope.container.btree import BTreeContainer
 from zope.interface import implementer
-from grokcore.chameleon import components
 
 import grokcore.view
 import grokcore.viewlet
+from grokcore.chameleon import components
+from grokcore.component.interfaces import IContext
 
 
 @implementer(IContext)

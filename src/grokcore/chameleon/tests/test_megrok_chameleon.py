@@ -1,17 +1,19 @@
 """Test setup for grokcore.chameleon.
 """
-import re
 import doctest
+import re
 import unittest
-import zope.interface
-import zope.component
-import grokcore.chameleon
 
-from zope.traversing.interfaces import ITraversable
-from zope.traversing.browser.interfaces import IAbsoluteURL
+import zope.component
+import zope.interface
 from zope.publisher.interfaces.browser import IBrowserRequest
-from grokcore.chameleon.tests import FunctionalLayer
 from zope.testing import renormalizing
+from zope.traversing.browser.interfaces import IAbsoluteURL
+from zope.traversing.interfaces import ITraversable
+
+import grokcore.chameleon
+from grokcore.chameleon.tests import FunctionalLayer
+
 
 FLAGS = (doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE)
 
