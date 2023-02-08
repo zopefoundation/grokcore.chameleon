@@ -27,14 +27,13 @@ from chameleon.tales import StringExpr
 from chameleon.tales import StructureExpr
 from chameleon.zpt.template import PageTemplate
 from chameleon.zpt.template import PageTemplateFile
-from z3c.pt.expressions import PathExpr
-from z3c.pt.expressions import ProviderExpr
-
 from grokcore.component import GlobalUtility
 from grokcore.component import implementer
 from grokcore.component import name
 from grokcore.view import interfaces
 from grokcore.view.components import GrokTemplate
+from z3c.pt.expressions import PathExpr
+from z3c.pt.expressions import ProviderExpr
 
 
 class PageTemplate(PageTemplate):
@@ -75,7 +74,7 @@ class PageTemplate(PageTemplate):
         else:
             vars['translate'] = chameleon.i18n.simple_translate
 
-        return super(PageTemplate, self).render(**vars)
+        return super().render(**vars)
 
 
 def _module_relative_to_abs(ctx, filename):
@@ -108,7 +107,7 @@ class PageTemplateFile(PageTemplate, PageTemplateFile):
     """
     def __init__(self, filename):
         filename = _module_relative_to_abs(self, filename)
-        super(PageTemplateFile, self).__init__(filename)
+        super().__init__(filename)
 
 
 class ChameleonPageTemplate(GrokTemplate):

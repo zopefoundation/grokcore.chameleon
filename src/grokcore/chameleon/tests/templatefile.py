@@ -23,17 +23,17 @@
   FileNotFoundError: [Errno 2] No such file or directory: '...templates/nothere.cpt'
 
 """  # noqa: E501 line too long
-import zope.interface
-
 import grokcore.component
 import grokcore.component.interfaces
 import grokcore.view
+import zope.interface
+
 from grokcore.chameleon.components import ChameleonPageTemplateFile
 from grokcore.chameleon.components import PageTemplateFile
 
 
 @zope.interface.implementer(grokcore.component.interfaces.IContext)
-class FooContext(object):
+class FooContext:
     pass
 
 
@@ -47,7 +47,7 @@ class WithFooTemplateNoExists(WithFooTemplate):
     template = ChameleonPageTemplateFile('templates/nothere.cpt')
 
 
-class NonGrokViewWithTemplate(object):
+class NonGrokViewWithTemplate:
     template = PageTemplateFile('templates/foo.cpt')
 
     def __init__(self, context, request):
