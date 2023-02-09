@@ -56,7 +56,7 @@ def test_suite():
     """
     suite = unittest.TestSuite()
     readme = doctest.DocFileSuite(
-        'README.txt',
+        'README.rst',
         checker=checker,
         setUp=setUpStatic,
         package=grokcore.chameleon,

@@ -27,11 +27,11 @@ tests_require = [
 
 
 long_description = (
-    open('README.txt').read() +
+    open('README.rst').read() +
     '\n\n' +
-    open(os.path.join('src', 'grokcore', 'chameleon', 'README.txt')).read() +
+    open(os.path.join('src', 'grokcore', 'chameleon', 'README.rst')).read() +
     '\n\n' +
-    open('CHANGES.txt').read())
+    open('CHANGES.rst').read())
 
 
 setup(
