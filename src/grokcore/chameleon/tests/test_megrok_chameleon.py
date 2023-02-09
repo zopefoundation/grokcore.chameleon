@@ -1,23 +1,25 @@
 """Test setup for grokcore.chameleon.
 """
-import re
 import doctest
+import re
 import unittest
-import zope.interface
-import zope.component
-import grokcore.chameleon
 
-from zope.traversing.interfaces import ITraversable
-from zope.traversing.browser.interfaces import IAbsoluteURL
+import zope.component
+import zope.interface
 from zope.publisher.interfaces.browser import IBrowserRequest
-from grokcore.chameleon.tests import FunctionalLayer
 from zope.testing import renormalizing
+from zope.traversing.browser.interfaces import IAbsoluteURL
+from zope.traversing.interfaces import ITraversable
+
+import grokcore.chameleon
+from grokcore.chameleon.tests import FunctionalLayer
+
 
 FLAGS = (doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE)
 
 
 @zope.interface.implementer(ITraversable, IAbsoluteURL)
-class DummyResource(object):
+class DummyResource:
     """ Dummy resource implementation. """
 
     def __init__(self, request, name=''):
@@ -25,7 +27,7 @@ class DummyResource(object):
         self.name = name
 
     def traverse(self, name, furtherPath):
-        name = '%s/%s' % (self.name, name)
+        name = '{}/{}'.format(self.name, name)
         return DummyResource(self.request, name=name)
 
     def __str__(self):

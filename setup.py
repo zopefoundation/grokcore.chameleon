@@ -1,7 +1,10 @@
 import os
-from setuptools import setup, find_packages
 
-version = '3.1.0.dev0'
+from setuptools import find_packages
+from setuptools import setup
+
+
+version = '4.0.dev0'
 
 
 install_requires = [
@@ -41,14 +44,12 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
@@ -56,14 +57,15 @@ setup(
     ],
     keywords="grok chameleon template",
     author="Uli Fouquet",
-    author_email="grok-dev@zope.org",
-    url="http://pypi.python.org/pypi/grokcore.chameleon",
+    author_email="zope-dev@zope.dev",
+    url="https://pypi.org/project/grokcore.chameleon/",
     license="ZPL",
     package_dir={'': 'src'},
     packages=find_packages('src'),
     namespace_packages=['grokcore'],
     include_package_data=True,
     zip_safe=False,
+    python_requires='>=3.7',
     install_requires=install_requires,
     tests_require=tests_require,
     extras_require={'test': tests_require},
