@@ -19,6 +19,7 @@ additional-rules = [
     "recursive-include src *.cpt",
     "recursive-include src *.css",
     "recursive-include src *.po",
+    "recursive-include src *.rst",
     "recursive-include src *.txt",
     "recursive-include src *.zcml",
     ]
