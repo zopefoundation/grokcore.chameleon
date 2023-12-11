@@ -4,7 +4,8 @@ CHANGES
 4.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Make tests compatible with ``Chameleon`` 4.3+, thus requiring at lest version
+  4.3.
 
 
 4.0 (2023-02-09)
