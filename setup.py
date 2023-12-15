@@ -8,7 +8,7 @@ version = '4.1.dev0'
 
 
 install_requires = [
-    'Chameleon >= 2.10',
+    'Chameleon >= 4.3',
     'grokcore.component',
     'grokcore.view',
     'setuptools',
