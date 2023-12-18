@@ -203,7 +203,7 @@ and render it:
     This template knows about the following vars:
     <BLANKLINE>
       template (the template instance):
-       &lt;PageTemplateFile ...vars.cpt'&gt;
+       &lt;PageTemplateFile ...vars.cpt&gt;
     <BLANKLINE>
       view (the associated view):
        &lt;grokcore.chameleon.tests.cpt_fixture.app.Vars object at 0x...&gt;
