@@ -7,8 +7,8 @@ CHANGES
 - The tests are not compatible with (yanked) ``Chameleon`` 4.3.0, thus not
   allowing to use this version.
 
-- Update translation handling to be compatible with Chameleon 4.3+: Only
-  translate message ids.
+- Update translation handling to be compatible with Chameleon 4.3+: do not
+  break no unhashable message ids, just return them.
 
 
 4.0 (2023-02-09)
