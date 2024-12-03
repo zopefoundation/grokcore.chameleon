@@ -19,6 +19,7 @@ import sys
 import chameleon.i18n
 import martian
 import zope.i18n
+import zope.i18nmessageid
 from chameleon.tales import ExistsExpr
 from chameleon.tales import ImportExpr
 from chameleon.tales import NotExpr
@@ -67,8 +68,11 @@ class PageTemplate(PageTemplate):
                     target_language=None, default=None):
                 # We swap context with the request, that is required for
                 # zope.i18ntranslate.
-                return zope.i18n.translate(
-                    msgid, domain, mapping, request, target_language, default)
+                if isinstance(msgid, zope.i18nmessageid.Message):
+                    return zope.i18n.translate(
+                        msgid, domain, mapping, request, target_language,
+                        default)
+                return msgid
 
             vars['translate'] = translate
         else:
