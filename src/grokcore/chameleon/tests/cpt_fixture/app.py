@@ -67,4 +67,5 @@ class Namespace(grokcore.view.View):
 
 
 class Menu(grokcore.view.View):
-    pass
+
+    variants = ['raw', 'bloody']

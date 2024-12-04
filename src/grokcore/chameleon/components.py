@@ -15,6 +15,7 @@
 
 import os
 import sys
+import typing
 
 import chameleon.i18n
 import martian
@@ -66,9 +67,12 @@ class PageTemplate(PageTemplate):
                     msgid, domain=None, mapping=None, context=None,
                     target_language=None, default=None):
                 # We swap context with the request, that is required for
-                # zope.i18ntranslate.
-                return zope.i18n.translate(
-                    msgid, domain, mapping, request, target_language, default)
+                # zope.i18n.translate.
+                if isinstance(msgid, typing.Hashable):
+                    return zope.i18n.translate(
+                        msgid, domain, mapping, request, target_language,
+                        default)
+                return msgid
 
             vars['translate'] = translate
         else:

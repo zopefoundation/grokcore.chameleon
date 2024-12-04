@@ -381,9 +381,13 @@ Translation
       <h1>Menu</h1>
       <ol>
         <li>Deepfried breaded veal cutlets</li>
+        <li>Variants: ['raw', 'bloody']</li>
       </ol>
     </body>
     </html>
+
+Unhashable types might be used as message ids: They do not break, but do not get
+translated either.
 
     >>> # What's for food today in Germany?
     >>> # We need to monkey patch the language settings for this test.
@@ -396,6 +400,7 @@ Translation
       <h1>Menu</h1>
       <ol>
         <li>Schnitzel</li>
+        <li>Variants: ['raw', 'bloody']</li>
       </ol>
     </body>
     </html>
