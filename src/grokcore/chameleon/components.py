@@ -52,7 +52,7 @@ class PageTemplate(PageTemplate):
         'exists': ExistsExpr,
         'import': ImportExpr,
         'structure': StructureExpr,
-        }
+    }
 
     def render(self, **vars):
         # zope.i18n.translate will call negociate to retrieve the
@@ -109,6 +109,7 @@ class PageTemplateFile(PageTemplate, PageTemplateFile):
 
     Takes an absolute path to the template file as the first argument.
     """
+
     def __init__(self, filename):
         filename = _module_relative_to_abs(self, filename)
         super().__init__(filename)
