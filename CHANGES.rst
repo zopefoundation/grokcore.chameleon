@@ -4,6 +4,8 @@ CHANGES
 4.1 (unreleased)
 ================
 
+- Drop support for Python 3.7.
+
 - The tests are not compatible with (yanked) ``Chameleon`` 4.3.0, thus not
   allowing to use this version.
 
