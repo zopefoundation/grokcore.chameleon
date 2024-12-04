@@ -381,7 +381,7 @@ Translation
       <h1>Menu</h1>
       <ol>
         <li>Deepfried breaded veal cutlets</li>
-        <li>Variants: ['none']</li>
+        <li>Variants: ['raw', 'bloody']</li>
       </ol>
     </body>
     </html>
@@ -400,7 +400,7 @@ translated either.
       <h1>Menu</h1>
       <ol>
         <li>Schnitzel</li>
-        <li>Variants: ['none']</li>
+        <li>Variants: ['raw', 'bloody']</li>
       </ol>
     </body>
     </html>

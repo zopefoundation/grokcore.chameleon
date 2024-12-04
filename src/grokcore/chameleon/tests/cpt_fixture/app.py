@@ -68,4 +68,4 @@ class Namespace(grokcore.view.View):
 
 class Menu(grokcore.view.View):
 
-    variants = ['none']
+    variants = ['raw', 'bloody']
