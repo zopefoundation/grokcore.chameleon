@@ -386,7 +386,7 @@ Translation
     </body>
     </html>
 
-Unhashable types might be used as message ids: The do not break, but do not get
+Unhashable types might be used as message ids: They do not break, but do not get
 translated either.
 
     >>> # What's for food today in Germany?
