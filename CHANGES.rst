@@ -4,7 +4,7 @@ CHANGES
 4.2 (unreleased)
 ================
 
-- Nothing changed yet.
+- Drop support for Python 3.8.
 
 
 4.1 (2024-12-04)
