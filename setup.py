@@ -1,6 +1,5 @@
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -22,7 +21,7 @@ tests_require = [
     'zope.app.appsetup',
     'zope.app.wsgi',
     'zope.testbrowser',
-    'zope.testrunner',
+    'zope.testrunner >= 6.4',
 ]
 
 
@@ -61,9 +60,6 @@ setup(
     author_email="zope-dev@zope.dev",
     url="https://github.com/zopefoundation/grokcore.chameleon/",
     license="ZPL-2.1",
-    package_dir={'': 'src'},
-    packages=find_packages('src'),
-    namespace_packages=['grokcore'],
     include_package_data=True,
     zip_safe=False,
     python_requires='>=3.9',
