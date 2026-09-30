@@ -21,6 +21,7 @@ tests_require = [
     'zope.app.appsetup',
     'zope.app.wsgi',
     'zope.testbrowser',
+    'zope.testing',
     'zope.testrunner >= 6.4',
 ]
 
