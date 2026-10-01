@@ -7,6 +7,61 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+
+[project]
+name = "grokcore.chameleon"
+version = "5.1.dev0"
+description = "Chameleon page template support for Grok"
+license = "ZPL-2.1"
+classifiers = [
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Implementation",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Framework :: Zope :: 3",
+]
+dynamic = ["readme"]
+requires-python = ">=3.10"
+authors = [
+    {name = "Uli Fouquet",email = "zope-dev@zope.dev"},
+]
+maintainers = [
+    {name = "Plone Foundation and contributors",email = "zope-dev@zope.dev"},
+]
+dependencies = [
+    "Chameleon != 4.3",
+    "grokcore.component",
+    "grokcore.view",
+    "setuptools",
+    "z3c.pt >= 2.2.2",
+    "zope.i18n",
+]
+keywords = ["grok", "chameleon", "template"]
+
+[project.optional-dependencies]
+test = [
+    "grokcore.viewlet",
+    "zope.app.appsetup",
+    "zope.app.wsgi",
+    "zope.testbrowser",
+    "zope.testing",
+    "zope.testrunner >= 6.4",
+]
+
+[project.urls]
+Source = "https://github.com/zopefoundation/grokcore.chameleon/"
+Issues = "https://github.com/zopefoundation/grokcore.chameleon/issues"
+Changelog = "https://raw.githubusercontent.com/zopefoundation/grokcore.chameleon/master/CHANGES.rst"
+
 [tool.coverage.run]
 branch = true
 source = ["grokcore.chameleon"]
@@ -34,3 +89,6 @@ directory = "parts/htmlcov"
 create-wheel = false
 extra-message = ""
 upload-pypi = false
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.rst", "src/grokcore/chameleon/README.rst", "CHANGES.rst"]}
