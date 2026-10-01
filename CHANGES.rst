@@ -4,6 +4,8 @@ CHANGES
 5.1 (unreleased)
 ================
 
+- Drop support for Python 3.9.
+
 - Add a missing test dependency which was transiently provided before.
 
 
