@@ -212,10 +212,10 @@ and render it:
        &lt;grokcore.chameleon.tests.cpt_fixture.app.Mammoth object at 0x...&gt;
     <BLANKLINE>
       request (the current request):
-       CONTENT_LENGTH:	0
-    GATEWAY_INTERFACE:	TestFooInterface/1.0
-    HTTP_HOST:	127.0.0.1
-    SERVER_URL:	http://127.0.0.1
+       CONTENT_LENGTH: 0
+    GATEWAY_INTERFACE: TestFooInterface/1.0
+    HTTP_HOST: 127.0.0.1
+    SERVER_URL: http://127.0.0.1
     </body>
     </html>
 
@@ -444,8 +444,8 @@ like this::
      Replaced by external macro
   </div>
 
-where ``<viewname>`` refers to an existing view on ``context`` and ``macro-
-name`` again refers to an existing macro in the specified template.
+where ``<viewname>`` refers to an existing view on ``context`` and ``macro-name``
+again refers to an existing macro in the specified template.
 
 Note, that this is different from how you refer to macros in standard Zope page
 templates. The short notation ``view/macros/<macro-name>`` works only with
